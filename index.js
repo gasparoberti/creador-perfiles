@@ -16,18 +16,26 @@ window.onload = function(e){
 
 
 function limpiar_tabla() { debugger
-    document.getElementById("td_familia").textContent  = ""
-    document.getElementById("td_edad_adultes").textContent  = ""
-    document.getElementById("td_edad_gurises").textContent  = ""
-    document.getElementById("td_hobbies").textContent  = ""
-    document.getElementById("td_trabajo").textContent  = ""
-    document.getElementById("td_localidad").textContent  = ""
-    document.getElementById("td_caracteristica").textContent  = ""
-    document.getElementById("td_procrear").textContent  = ""
+    document.getElementById("td_familia").textContent = ""
+    document.getElementById("td_edad_adultes").textContent = ""
+    document.getElementById("td_edad_gurises").textContent = ""
+    document.getElementById("td_hobbies").textContent = ""
+    document.getElementById("td_trabajo").textContent = ""
+    document.getElementById("td_localidad").textContent = ""
+    document.getElementById("td_caracteristica").textContent = ""
+    document.getElementById("td_procrear").textContent = ""
 }
 
-function completar_td(nombre_categoría, array_categoría) {
-    document.getElementById("td_" + nombre_categoría).innerHTML = sorteo_componente(array_categoría)
+function completar_td(nombre_categoría, array_categoría, cantidad_caracteristicas) {
+    if (cantidad_caracteristicas == "2") {
+        document.getElementById("td_" + nombre_categoría).innerHTML = sorteo_caracteristicas(array_categoría)
+    } 
+    else 
+        document.getElementById("td_" + nombre_categoría).innerHTML = sorteo_componente(array_categoría)
+}
+
+function sorteo_caracteristicas(array_categoría) {
+    return sorteo_componente(array_categoría) + " / " + sorteo_componente(array_categoría)
 }
 
 function obtener_categoria_procrear() {
@@ -58,7 +66,7 @@ function sorteo_perfil() {
     completar_td("hobbies", hobbies)
     completar_td("trabajo", trabajo)
     completar_td("localidad", localidad)
-    completar_td("caracteristica", caracteristica)
+    completar_td("caracteristica", caracteristica, document.getElementById("slct_caracteristicas").value)
     completar_td("procrear", obtener_categoria_procrear())
 }
 
