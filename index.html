@@ -59,40 +59,40 @@
             <div class="col-sm" style="background-color: aqua;">
                 <div class="row">
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="chk_familia" checked>
                         Familia
                     </div>
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="chk_edad_adultes" checked>
                         Edad Adultes
                     </div>
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        Edad Adultes
+                        <input class="form-check-input" type="checkbox" value="" id="chk_edad_gurises" checked>
+                        Edad Gurises
                     </div>
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        Edad Adultes
+                        <input class="form-check-input" type="checkbox" value="" id="chk_hobbies" checked>
+                        Hobbies
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        Familia
+                        <input class="form-check-input" type="checkbox" value="" id="chk_trabajo" checked>
+                        Trabajo
                     </div>
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        Edad Adultes
+                        <input class="form-check-input" type="checkbox" value="" id="chk_localidad" checked>
+                        Localidad
                     </div>
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        Edad Adultes
+                        <input class="form-check-input" type="checkbox" value="" id="chk_caracteristica" checked>
+                        Caracteristica
                     </div>
                     <div class="col-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="chk_procrear" checked>
                         <select name="" id="procreador">
-                            <option>Action</option>
-                            <option>Another action</option>
+                            <option id="slct_1_dorm">1 Dorm.</option>
+                            <option id="slct_2_dorm">2 Dorm.</option>
                         </select>
                     </div>
                 </div>
@@ -114,32 +114,45 @@
         </div>
 
         <div style="padding-top: 2vw;">
-            <table class="table" id="tabla_sorteo">
+            <table class="table table-bordered" id="tabla_sorteo">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col" style="width: 30%;">CATEGORIA</th>
+                        <th scope="col" style="width: 70%;">COMPONENTES</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
+                    <tr id="tr_familia">
+                        <th scope="row">FAMILIA</th>
                         <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
+                    <tr id="tr_edad_adultes">
+                        <th scope="row">EDAD ADULTES</th>
                         <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
                     </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
+                    <tr id="tr_edad_gurises">
+                        <th scope="row">EDAD GURISES</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr id="tr_hobbies">
+                        <th scope="row">HOBBIES</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr id="tr_trabajo">
+                        <th scope="row">TRABAJO</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr id="tr_localidad">
+                        <th scope="row">LOCALIDAD</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr id="tr_caracteristica">
+                        <th scope="row">CARACTERISTICA</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr id="tr_procrear">
+                        <th scope="row">PROCREAR</th>
+                        <td>Jacob</td>
                     </tr>
                 </tbody>
             </table>
@@ -150,6 +163,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
