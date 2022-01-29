@@ -14,7 +14,27 @@ window.onload = function(e){
     eventos_tr()
 }
 
-function habilitar_eventos(flag) {debugger
+function descargar_pdf() {
+    var obj = new jsPDF()
+    obj.text('Perfil creado aleatoriamente a partir de las opciones seleccionadas.', 20, 20)
+    
+    var res = obj.autoTableHtmlToJson(document.getElementById("tabla_sorteo"));
+
+    obj.autoTable(res.columns, res.rows, 
+        {margin: {top: 80, bottom:50},
+        startY: 30,
+        tableWidth: 180,
+        styles: {
+        overflow: 'linebreak',
+        columnWidth: 'wrap',
+        // rowHeight:'wrap',
+        lineWidth: 1
+        }});
+        
+    obj.save('Perfil.pdf');
+}
+
+function habilitar_eventos(flag) {
     if (flag) {
         document.getElementById("boton_descargar").disabled = false;
         document.getElementById("boton_copiar").disabled = false;
