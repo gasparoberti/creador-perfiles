@@ -107,13 +107,17 @@
                     <div class="col" style="background-color: white;">
                         <button type="button" onclick="sorteo_perfil()" class="btn btn-primary btn-md">Sortear
                             Perfil</button>
-                        <button type="button" class="btn btn-outline-primary btn-md disabled">Descargar Perfil</button>
-                        <button type="button" class="btn btn-outline-primary btn-md disabled">Copiar Perfil</button>
+                        <button type="button" class="btn btn-outline-primary btn-md" disabled
+                            id="boton_descargar">Descargar Perfil</button>
+                        <button type="button" class="btn btn-outline-primary btn-md" disabled id="boton_copiar"
+                            onclick="copiar_portapapeles()">Copiar
+                            Perfil</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <input type="text" value="" id="myInput" hidden>
 
         <div style="padding-top: 2vw;">
             <table class="table table-bordered" id="tabla_sorteo">

@@ -14,8 +14,41 @@ window.onload = function(e){
     eventos_tr()
 }
 
+function habilitar_eventos(flag) {debugger
+    if (flag) {
+        document.getElementById("boton_descargar").disabled = false;
+        document.getElementById("boton_copiar").disabled = false;
+    }
+    else {
+        document.getElementById("boton_descargar").disabled = true;
+        document.getElementById("boton_copiar").disabled = true;
+    }
+}
 
-function limpiar_tabla() { debugger
+function copiar_portapapeles() {
+    var tabla = document.getElementById("tabla_sorteo");
+    var texto = "";
+
+    for (var i = 1, row; row = tabla.rows[i]; i++) {
+        texto += ` ${row.cells[0].innerText}: ${row.cells[1].innerText},`;
+    }
+
+    texto = texto.substring(0, texto.length -1);
+    texto += ".";
+
+    //input oculto del que se obtienen 
+    document.getElementById("myInput").value = texto;
+    
+    var copyT = document.getElementById("myInput");
+
+    //la función select funciona obteniendo el texto de un input. si a copyT le asigno el valor de texto directamente no funciona.
+    copyT.select();
+    copyT.setSelectionRange(0, 99999); 
+
+    navigator.clipboard.writeText(copyT.value);
+}
+
+function limpiar_tabla() { 
     document.getElementById("td_familia").textContent = ""
     document.getElementById("td_edad_adultes").textContent = ""
     document.getElementById("td_edad_gurises").textContent = ""
@@ -24,6 +57,8 @@ function limpiar_tabla() { debugger
     document.getElementById("td_localidad").textContent = ""
     document.getElementById("td_caracteristica").textContent = ""
     document.getElementById("td_procrear").textContent = ""
+
+    habilitar_eventos(false);
 }
 
 function completar_td(nombre_categoría, array_categoría, cantidad_caracteristicas) {
@@ -68,6 +103,8 @@ function sorteo_perfil() {
     completar_td("localidad", localidad)
     completar_td("caracteristica", caracteristica, document.getElementById("slct_caracteristicas").value)
     completar_td("procrear", obtener_categoria_procrear())
+
+    habilitar_eventos(true);
 }
 
 function sorteo_componente(categoria) {
